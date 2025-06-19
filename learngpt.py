@@ -27,7 +27,6 @@ decode = lambda l: ''.join([itos[i] for i in l])
 print(encode("hi there"))
 print(decode(encode("hi there")))
 
-import torch
 data = torch.tensor(encode(text), dtype=torch.long)
 print(data.shape, data.dtype)
 print(data[:1000])
