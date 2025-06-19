@@ -8,6 +8,8 @@ Original file is located at
 """
 
 import torch
+import torch.nn as nn
+from torch.nn import functional as F
 
 with open('input.txt', 'r', encoding='utf-8') as f:
     text = f.read()
@@ -51,9 +53,6 @@ def get_batch(split):
 
 xb, yb = get_batch('train')
 
-import torch
-import torch.nn as nn
-from torch.nn import functional as F
 torch.manual_seed(1337)
 
 class BigramModel(nn.Module):
@@ -93,8 +92,9 @@ print(loss.item())
 idx = torch.zeros((1, 1), dtype=torch.long)
 print(decode(m.generate(idx, max_new_tokens=100)[0].tolist()))
 
-optmizier = torch.optim.AdamW(m.parameters(), lr=1e-3)
+# optmizier = torch.optim.AdamW(m.parameters(), lr=1e-3)
 
+''''''''''
 batch_size = 32
 for steps in range(10000):
   xb, yb = get_batch('train')
@@ -107,3 +107,4 @@ print(loss.item())
 
 idx = torch.zeros((1, 1), dtype=torch.long)
 print(decode(m.generate(idx, max_new_tokens=400)[0].tolist()))
+'''''''''''

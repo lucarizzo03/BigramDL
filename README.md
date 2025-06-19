@@ -1,2 +1,2 @@
 # BigramDL
-Bigram Deep Learning Model
+This project implements a simple Bigram language model using PyTorch. The model learns to predict the next character given the current character from a text corpus. It demonstrates how to build and train a basic neural network language model based on bigrams.
